@@ -1,0 +1,10 @@
+services:
+  downloader:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./downloads:/app/downloads
+      # Optional cookies file:
+      # - ./cookies.txt:/app/cookies.txt:ro
